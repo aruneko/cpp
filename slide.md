@@ -40,7 +40,8 @@
 --
 
 ## ふつーのC
-```c:hello.c
+
+```c
 #include <stdio.h>
 
 int main(void) {
@@ -53,7 +54,7 @@ int main(void) {
 
 ## かなりCっぽいC++
 
-```c++:hello.cpp
+```cpp
 # include <cstdio>
 using namespace std;
 // なんか増えてる
@@ -69,7 +70,7 @@ int main() {
 
 ## Better C (今回はこのスタイル)
 
-```c++:hello.cpp
+```cpp
 # include <iostream>
 using namespace std;
 
@@ -83,7 +84,7 @@ int main() {
 
 ## (おまけ) 原理主義者
 
-```c++:hello.cpp
+```cpp
 # include <iostream>
 
 int main() {
@@ -99,6 +100,10 @@ int main() {
 ---
 
 # 標準入出力
+
+--
+
+## 
 
 --
 
@@ -127,7 +132,7 @@ int main() {
 
 ## 標準出力のサンプルコード(再掲)
 
-```c++:hello.cpp
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -158,8 +163,8 @@ int main() {
 
 ## 標準入力のサンプルコード
 
-```c++:input.cpp
-nclude <iostream>
+```cpp
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -196,7 +201,7 @@ int main() {
 
 ## 練習問題(回答例)
 
-```c++:sum.cpp
+```cpp
 #include <iostream>
 using namespace std;
 
