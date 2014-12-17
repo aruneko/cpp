@@ -909,35 +909,35 @@ delete [] d;
 using namespace std;
 
 inline int max(int x, int y) {
-  return (x > y) ? x : y;
+	return (x > y) ? x : y;
 }
 
 int add(int x, int y = 2) {
-  return x + y;
+	return x + y;
 }
 
 int add2(int x) {
-  return x + 2;
+	return x + 2;
 }
 
 double add2(double x) {
-  return x + 2;
+	return x + 2;
 }
 
 template <class T>
 T add2T(T x) {
-  return x + 2;
+	return x + 2;
 }
 
 int main() {
-  cout << "max(5,3) = " << max(5, 3) << "\n";
-  cout << "add(5) = " << add(5) << "\n";
-  cout << "add(5, 3) = " << add(5, 3) << "\n";
-  cout << "add2(9) = " << add2(9) << "\n";
-  cout << "add2(3.7) = " << add2(3.7) << "\n";
-  cout << "add2T(4.6) = " << add2T(4.6) << "\n";
-  cout << "add2T(6) = " << add2T(6) << "\n";
-  cout << "Lamda(2 * 6) = " << [](int x){return x * 2;}(6) << endl;
+	cout << "max(5,3) = " << max(5, 3) << "\n";
+	cout << "add(5) = " << add(5) << "\n";
+	cout << "add(5, 3) = " << add(5, 3) << "\n";
+	cout << "add2(9) = " << add2(9) << "\n";
+	cout << "add2(3.7) = " << add2(3.7) << "\n";
+	cout << "add2T(4.6) = " << add2T(4.6) << "\n";
+	cout << "add2T(6) = " << add2T(6) << "\n";
+	cout << "Lamda(2 * 6) = " << [](int x){return x * 2;}(6) << endl;
 }
 ```
 
@@ -961,7 +961,7 @@ type funcName(引数1, 引数2, ...) {
 
 ```cpp
 inline int max(int x, int y) {
-  return (x > y) ? x : y;
+	return (x > y) ? x : y;
 }
 ```
 
@@ -975,7 +975,7 @@ inline int max(int x, int y) {
 
 ```cpp
 int add(int x, int y = 2) {
-  return x + y;
+	return x + y;
 }
 ```
 
@@ -990,11 +990,11 @@ int add(int x, int y = 2) {
 
 ```cpp
 int add2(int x) {
-  return x + 2;
+	return x + 2;
 }
 
 double add2(double x) {
-  return x + 2;
+	return x + 2;
 }
 ```
 
@@ -1009,7 +1009,7 @@ double add2(double x) {
 ```cpp
 template <class T>
 T add2T(T x) {
-  return x + 2;
+	return x + 2;
 }
 ```
 
@@ -1027,6 +1027,45 @@ T add2T(T x) {
 ```
 
 * `[](仮引数){処理}(実引数)`の順に書きます
+	* 仮引数や実引数は処理に応じて省略可能です
+* その場で一回だけ使う関数として定義します
+* auto型変数に代入して、その変数を関数っぽく使うこともできます
+* もちろん、関数の引数として渡すこともできます
+
+--
+
+## 練習問題
+
+参照をうまく利用して2つの値を入れ替える関数mySwapを作ってください
+
+--
+
+## 練習問題(回答例)
+
+```cpp
+#include <iostream>
+using namespace std;
+
+template <class T>
+void mySwap(T &x, T &y) {
+	T tmp;
+	tmp = x;
+	x = y;
+	y = tmp;
+}
+
+int main() {
+	int x, y;
+	cin >> x >> y;
+	mySwap(x, y); 
+	cout << x << " " << y << endl;
+
+	char a, b;
+	cin >> a >> b;
+	mySwap(a, b); 
+	cout << a << " " << b << endl;
+}
+```
 
 ----
 
