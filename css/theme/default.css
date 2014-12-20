@@ -147,7 +147,7 @@ body {
 .reveal .slide-number {
   color: #13daec; }
 
-code {
+li code {
 	background-color: #656565;
   border: 1px solid #EAEAEA;
 	border-radius: 3px 3px 3px 3px;
