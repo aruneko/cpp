@@ -1307,7 +1307,7 @@ int main() {
 
 --
 
-## イテレーターと範囲ベースfor
+## イテレーターとfor_each
 
 ```cpp
 #include <iostream>
