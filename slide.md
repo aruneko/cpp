@@ -21,7 +21,6 @@
 * 関数
 * 文字列
 * STL
-* Class
 
 ----
 
@@ -37,7 +36,6 @@
 
 ## Better Cってなんぞ？
 * 要するに "C++ without Class"
-	* (でもちょっとだけ触れます。ごめんなさい)
 
 --
 
@@ -1228,9 +1226,134 @@ int main() {
 
 # STL
 
-----
+--
 
-# Class
+## STLって何？
+
+* Standard Templete Libraryの略です
+* 多様なデータ構造やアルゴリズムが搭載されています
+	* しかも標準で！
+* ということでいろいろ紹介していきます
+
+--
+
+## Vector
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+  vector<int> vec;
+  vec.push_back(0);
+  vec.push_back(1);
+
+  cout << vec.size() << endl;
+
+  vec.resize(50);
+  cout << vec.size() << endl;
+
+  vec[38] = 29; 
+  cout << vec[38] << endl;
+}
+```
+
+--
+
+## Stack
+
+```cpp
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main() {
+  stack<int> st; 
+
+  st.push(0);
+  st.push(1);
+  st.push(2);
+
+  for (int i = 0, l = st.size(); i < l; i++) {
+    cout << st.top() << endl;
+    st.pop();
+  }
+}
+```
+
+--
+
+## Queue
+
+```cpp
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main() {
+  queue<int> qu; 
+
+  qu.push(0);
+  qu.push(1);
+  qu.push(2);
+
+  for (int i = 0, l = qu.size(); i < l; i++) {
+    cout << qu.front() << endl;
+    qu.pop();
+  }
+}
+```
+
+--
+
+## イテレーターと範囲ベースfor
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+  vector<int> vec;
+
+  for (int i = 0; i < 10; i++) {
+    vec.push_back(i);
+  }
+
+  for_each(vec.begin(), vec.end(), [](int x) {cout << x << endl;});
+}
+```
+
+* C++11以降での書き方です
+
+--
+
+## ソート
+
+```cpp
+#include <iostream>
+#include <random>
+#include <algorithm>
+using namespace std;
+
+int main() {
+  random_device rd; 
+  mt19937 mt(rd());
+  int r[10] = {0};
+
+  for (int i = 0; i < 10; i++) {
+    r[i] = mt() % 1000;
+  }
+
+  sort(r, r + 10);
+
+  for (int i = 0; i < 10; i++) {
+    cout << r[i] << endl;
+  }
+}
+```
 
 ----
 
