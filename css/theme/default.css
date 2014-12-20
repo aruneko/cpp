@@ -146,3 +146,7 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #13daec; }
+
+code {
+	background-color: #666666;
+}
