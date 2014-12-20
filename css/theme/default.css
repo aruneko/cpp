@@ -155,3 +155,7 @@ li code {
   padding: 0 5px;
   white-space: nowrap;
 }
+
+backquote {
+	text-align: left;
+}
