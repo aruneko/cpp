@@ -62,7 +62,7 @@ int main(void) {
 ## かなりCっぽいC++
 
 ```cpp
-# include <cstdio>
+#include <cstdio>
 using namespace std;
 // なんか増えてる
 
@@ -78,7 +78,7 @@ int main() {
 ## Better C (今回はこのスタイル)
 
 ```cpp
-# include <iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -92,7 +92,7 @@ int main() {
 ## (おまけ) 原理主義者
 
 ```cpp
-# include <iostream>
+#include <iostream>
 
 int main() {
 	std::cout << "Hello World" << std::endl;
@@ -113,7 +113,7 @@ int main() {
 ## この章でわかるようになるサンプルコード
 
 ```cpp
-# include <iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -131,14 +131,14 @@ int main() {
 ## ヘッダのインクルード
 
 ```cpp
-# include <iostream>
+#include <iostream>
 ```
 * iostreamヘッダの読み込みを意味しています
 * iostreamには入出力ストリームの定義が書かれています
 	* ちょっと下の方に書いてあった`cout`とか`cin`とか
 * Unix系OSの場合"/usr/include/c++/VERSION/iostream"に存在します
 * C言語用のヘッダを使いたいときは、先頭にcを付加して最後の.hを取ります
-	* 例：`stiod.h` → `cstdio`
+	* 例：`stdio.h` → `cstdio`
 
 --
 
@@ -266,7 +266,7 @@ int main() {
 ## この章でわかるようになるサンプルコード(1)
 
 ```cpp
-# include <iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -290,7 +290,7 @@ int main() {
 ## この章でわかるようになるサンプルコード(2)
 
 ```cpp
-# include <iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -732,6 +732,7 @@ n個の入力された数列を逆順に出力するプログラムを作成し�
 
 ### 出力形式
 > xn ... x3 x2 x1
+
 * ただし出力の最後に空白文字を含まないこと
 
 --
@@ -1386,16 +1387,16 @@ using namespace std;
 int main() {
   random_device rd; 
   mt19937 mt(rd());
-  int r[10] = {};
+  int r[10] = {}; 
 
-  for (int i = 0; i < 10; i++) {
-    r[i] = mt() % 1000;
+  for (auto &t: r) {
+    t = mt() % 1000;
   }
 
-  sort(r, r + 10);
+  sort(r, r + sizeof(r)/r[0]);
 
-  for (int i = 0; i < 10; i++) {
-    cout << r[i] << endl;
+  for (auto &t: r) {
+    cout << t << endl;
   }
 }
 ```
